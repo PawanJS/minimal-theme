@@ -30,6 +30,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
@@ -40,6 +41,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
+            "show_dynamic_checkout": true
           }
         },
         "description": {
@@ -50,6 +52,7 @@
         "share": {
           "type": "share",
           "settings": {
+            "share_label": "Share"
           }
         }
       },
@@ -65,16 +68,62 @@
         "share"
       ],
       "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "163504097077c876f3": {
+      "type": "image-with-text",
+      "blocks": {
+        "163504097077c876f3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Features"
+          }
+        },
+        "163504097077c876f3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>"
+          }
+        },
+        "163504097077c876f3-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "163504097077c876f3-0",
+        "163504097077c876f3-1",
+        "163504097077c876f3-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/iphone-detects-qr-code.jpg",
+        "height": "small",
+        "color_scheme": "background-1",
+        "layout": "image_first"
       }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "163504097077c876f3"
   ]
 }
