@@ -1,5 +1,5 @@
-import Vue from 'vue/dist/vue.js';
+// import Vue from 'vue/dist/vue.js';
 
-const header = new Vue({
-  el: '.pawan',
-});
+// const header = new Vue({
+//   el: '.pawan',
+// });
