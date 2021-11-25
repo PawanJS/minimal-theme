@@ -3,7 +3,8 @@
 <img src={{product.featured_image.src | img_url:"large"}}>
 <p>{{product.description}}</p>
 <a href={{product.url}}>click</a>
-<p>{{product.price}}</p>
+<p>      {% render 'price', product: product_card_product, price_class: '' %}
+</p>
 {% endfor %}
 
 
