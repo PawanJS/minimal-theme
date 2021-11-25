@@ -492,10 +492,9 @@
       {%- endif -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-      {% comment %} <span class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble"> {% endcomment %}
         {%- liquid
           if cart == empty
-            render 'react-cart-tool-tip'
+            render 'icon-cart-empty'
           else
             render 'icon-cart'
           endif
@@ -509,7 +508,6 @@
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
-      {% comment %} </span> {% endcomment %}
       </a>
     </div>
   </header>
