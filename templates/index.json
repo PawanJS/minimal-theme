@@ -58,6 +58,7 @@
     "16378544267590d2a2": {
       "type": "rander_product",
       "settings": {
+        "collection": "frontpage"
       }
     }
   },
