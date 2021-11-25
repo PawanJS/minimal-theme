@@ -54,10 +54,16 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "16378544267590d2a2": {
+      "type": "rander_product",
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_products"
+    "featured_products",
+    "16378544267590d2a2"
   ]
 }
