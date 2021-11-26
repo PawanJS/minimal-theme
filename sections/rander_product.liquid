@@ -1,0 +1,44 @@
+{% for product in section.settings.collection.products %}
+<h1>{{ product.title }}</h1>
+<img src={{ product.featured_image.src | img_url: "large"}} width="500" height="500" loading="lazy">
+<p>{{product.description}}</p>
+<a href={{product.url}}>click</a>
+{% render 'price' %}
+<form method="post" action="/cart/add">
+  <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+  <input name="add" value="ORDER NOW" type="submit" />
+</form>
+<form method="post" action="/cart/add">
+  <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+  <button type="submit">Add to cart</button>
+</form>
+{%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+  <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+  <button type="submit">Form Add to cart</button>
+{%- endform -%}
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "Rander Products",
+    "settings": [
+  {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    }
+],
+"presets":[
+{
+"name":"Rander Products"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
