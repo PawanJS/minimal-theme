@@ -1,5 +1,6 @@
 {% for product in section.settings.collection.products %}
 <h1>{{ product.title }}</h1>
+<<<<<<< HEAD
 <img src={{ product.featured_image.src | img_url: "large"}} width="500" height="500" loading="lazy">
 <p>{{product.description}}</p>
 <a href={{product.url}}>click</a>
@@ -16,6 +17,12 @@
   <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
   <button type="submit">Form Add to cart</button>
 {%- endform -%}
+=======
+<img src={{product.featured_image.src | img_url:"large"}}>
+<p>{{product.description}}</p>
+<a href={{product.url}}>click</a>
+{% render 'price', product: product_card_product, price_class: '' %}
+>>>>>>> e5a9cd8ce87d77ac90ff2c4de1c6b4cd7b34ac00
 {% endfor %}
 
 
