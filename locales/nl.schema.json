@@ -1885,5 +1885,11 @@
         "name": "Uitgelicht product"
       }
     }
+  },
+  "discount_ninja": {
+    "from": "Vanaf",
+    "here": "hier",
+    "free": "GRATIS",
+    "sold_out": "Uitverkocht"
   }
 }

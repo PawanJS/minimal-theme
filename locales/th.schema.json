@@ -1885,5 +1885,11 @@
         "name": "สินค้าแนะนำ"
       }
     }
+  },
+  "discount_ninja": {
+    "from": "A partir de",
+    "here": "aqui",
+    "free": "GRÁTIS",
+    "sold_out": "Agotado"
   }
 }

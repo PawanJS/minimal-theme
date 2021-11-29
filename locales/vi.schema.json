@@ -1885,5 +1885,11 @@
         "name": "Sản phẩm nổi bật"
       }
     }
+  },
+  "discount_ninja": {
+    "from": "A partir de",
+    "here": "aqui",
+    "free": "GRÁTIS",
+    "sold_out": "Agotado"
   }
 }
