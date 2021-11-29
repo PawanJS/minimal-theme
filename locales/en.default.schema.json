@@ -1885,5 +1885,11 @@
         "name": "Video"
       }
     }
+  },
+  "discount_ninja": {
+    "from": "From",
+    "here": "here",
+    "free": "FREE",
+    "sold_out": "Sold out"
   }
 }

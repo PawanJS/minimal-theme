@@ -1885,5 +1885,11 @@
         "name": "Produit en vedette"
       }
     }
+  },
+  "discount_ninja": {
+    "from": "À partir de",
+    "here": "ici",
+    "free": "GRATUIT",
+    "sold_out": "Épuisé"
   }
 }
