@@ -125,7 +125,8 @@
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
     {% render 'judgeme_core' %}
-{% render "zepto_common" %}</head>
+{% render "zepto_common" %}{% render 'limoniapps-discountninja-header' %}{%- if product -%}{%- assign discountninjaproduct = product -%}{%- endif -%}{%- if collection -%}{%- assign discountninjacollection = collection -%}{%- endif -%}
+</head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -171,5 +172,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {% if template contains "product" %}{% render "product-personalizer" , product:product %}{% endif %}</body>
+  {% if template contains "product" %}{% render "product-personalizer" , product:product %}{% endif %}{% include 'limoniapps-discountninja-body' %}
+</body>
 </html>
