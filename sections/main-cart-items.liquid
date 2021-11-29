@@ -42,13 +42,13 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                <tr style="{% render "product-personalizer-helper" ,item:item,pplr: "hide-pricing-item-row" %}" {% render "product-personalizer-helper" ,forloop:forloop,item:item,pplr: "cart-row-data" %}  class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                       <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
                       <img class="cart-item__image"
-                        src="{{ item.image | img_url: '300x' }}"
+                        src="{% render 'product-personalizer' ,item:item,pplr: 'item-image', item_image_size:'300x' %}"
                         alt="{{ item.image.alt | escape }}"
                         loading="lazy"
                         width="150"
@@ -75,7 +75,7 @@
                           {%- endfor -%}
                         {%- endif -%}
 
-                        {%- for property in item.properties -%}
+                        {%- for property in item.properties -%}{% comment %}
                           {%- assign property_first_char = property.first | slice: 0 -%}
                           {%- if property.last != blank and property_first_char != '_' -%}
                             <div class="product-option">
@@ -91,7 +91,7 @@
                               </dd>
                             </div>
                           {%- endif -%}
-                        {%- endfor -%}
+                        {% endcomment %}{%- endfor -%}{% render "product-personalizer-helper" ,item:item %}
                       </dl>
 
                       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
@@ -133,19 +133,19 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              {{ item.original_line_price | money }}
+                              {% render 'product-personalizer-helper' ,item:item,pplr: 'item-original-line-price', items: cart.items %}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
                           <dd class="price price--end">
-                            {{ item.final_line_price | money }}
+                            {% render 'product-personalizer-helper' ,item:item,pplr: 'item-final-line-price', items: cart.items %}
                           </dd>
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          {% render 'product-personalizer-helper' ,item:item,pplr: 'item-original-line-price', items: cart.items %}
                         </span>
                       {%- endif -%}
 
@@ -212,19 +212,19 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              {{ item.original_line_price | money }}
+                              {% render 'product-personalizer-helper' ,item:item,pplr: 'item-original-line-price', items: cart.items %}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
                           <dd class="price price--end">
-                            {{ item.final_line_price | money }}
+                            {% render 'product-personalizer-helper' ,item:item,pplr: 'item-final-line-price', items: cart.items %}
                           </dd>
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          {% render 'product-personalizer-helper' ,item:item,pplr: 'item-original-line-price', items: cart.items %}
                         </span>
                       {%- endif -%}
 
@@ -268,3 +268,4 @@
   ]
 }
 {% endschema %}
+{% render "product-personalizer-helper" ,item:item,pplr: "product-personalizer-script" %}
