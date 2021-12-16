@@ -79,29 +79,4 @@ class CartNotification extends HTMLElement {
 
 customElements.define('cart-notification', CartNotification);
 
- (function(){
-
-  var addData = {
-    'id':42204415099111, /* for testing, change this to a variant ID on your store */
-    'quantity':1
-  };
-
-  fetch('/cart/update.js', {
-    body: JSON.stringify(addData),
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With':'xmlhttprequest' /* XMLHttpRequest is ok too, it's case insensitive */
-    },
-    method: 'POST'
-  }).then(function(response) {
-    return response.json();
-  }).then(function(json) {
-    /* we have JSON */
-    console.log(json)
-  }).catch(function(err) {
-    /* uh oh, we have error. */
-    console.error(err)
-  });
-  
-})();
+ 
