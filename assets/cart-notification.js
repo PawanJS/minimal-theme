@@ -92,3 +92,4 @@ async function getCart() {
 // Example
 const cart = await getCart();
 
+console.log(cart);
