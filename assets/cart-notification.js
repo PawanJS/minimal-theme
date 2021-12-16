@@ -79,18 +79,29 @@ class CartNotification extends HTMLElement {
 
 customElements.define('cart-notification', CartNotification);
 
- function getCart() {
-    const result =  fetch("/cart/add.js");
+ (function(){
 
-    if (result.status === 200) {
-      console.log(result);
-              return result.json();
+  var addData = {
+    'id':21373873027, /* for testing, change this to a variant ID on your store */
+    'quantity':1
+  };
 
-    }
-
-    throw new Error(`Failed to get request, Shopify returned ${result.status} ${result.statusText}`);
-}
-
-// Example
-const cart =  getCart();
-
+  fetch('/cart/add.js', {
+    body: JSON.stringify(addData),
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With':'xmlhttprequest' /* XMLHttpRequest is ok too, it's case insensitive */
+    },
+    method: 'POST'
+  }).then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    /* we have JSON */
+    console.log(json)
+  }).catch(function(err) {
+    /* uh oh, we have error. */
+    console.error(err)
+  });
+  
+})();
