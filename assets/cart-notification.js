@@ -78,3 +78,17 @@ class CartNotification extends HTMLElement {
 }
 
 customElements.define('cart-notification', CartNotification);
+
+async function getCart() {
+    const result = await fetch("/cart.json");
+
+    if (result.status === 200) {
+        return result.json();
+    }
+
+    throw new Error(`Failed to get request, Shopify returned ${result.status} ${result.statusText}`);
+}
+
+// Example
+const cart = await getCart();
+
