@@ -86,7 +86,7 @@ customElements.define('cart-notification', CartNotification);
     'quantity':1
   };
 
-  fetch('/cart/add.js', {
+  fetch('/cart/update.js', {
     body: JSON.stringify(addData),
     credentials: 'same-origin',
     headers: {
