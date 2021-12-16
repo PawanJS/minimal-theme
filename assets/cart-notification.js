@@ -80,7 +80,7 @@ class CartNotification extends HTMLElement {
 customElements.define('cart-notification', CartNotification);
 
  function getCart() {
-    const result =  fetch("/cart/update.js");
+    const result =  fetch("/cart/add.js");
 
     if (result.status === 200) {
       console.log(result);
