@@ -79,8 +79,8 @@ class CartNotification extends HTMLElement {
 
 customElements.define('cart-notification', CartNotification);
 
-async function getCart() {
-    const result = await fetch("/cart.json");
+ function getCart() {
+    const result =  fetch("/cart.json");
 
     if (result.status === 200) {
       console.log(result);
@@ -92,5 +92,5 @@ async function getCart() {
 }
 
 // Example
-const cart = await getCart();
+const cart =  getCart();
 
