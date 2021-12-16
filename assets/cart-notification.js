@@ -82,7 +82,7 @@ customElements.define('cart-notification', CartNotification);
  (function(){
 
   var addData = {
-    'id':21373873027, /* for testing, change this to a variant ID on your store */
+    'id':42204415099111, /* for testing, change this to a variant ID on your store */
     'quantity':1
   };
 
